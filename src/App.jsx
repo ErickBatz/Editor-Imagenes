@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Header from './conponents/Header'
 import CargarFotografia from './conponents/CargarFotografica'
 import VistaPrevia from './conponents/VistaPrevia'
@@ -6,12 +7,14 @@ import './App.css'
 
 function App() {
 
+  const [imagenOriginal, setImagenOriginal] = useState(null);
+
   return (
    <div className="app">
-      <header/>
+      <Header/>
       <main className="editor-layout">
-        <CargarFotografia/>
-        <VistaPrevia/>
+        <CargarFotografia onImagenCargada={setImagenOriginal} />
+        <VistaPrevia imagenOriginal={imagenOriginal} />
         <HerramientasEdicion/>
       </main>
    </div>
