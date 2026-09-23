@@ -1,11 +1,11 @@
 :root{
-    --color-primario: #0d9488;
+    --color-primario: #679e9a;
     --color-acento: #7c3aed;
     --color-accion: #ec4899;
     --color-texto-principal:#118227;
     --color-texto-secundario: #4b5563;
     --color-bordes: #e5e7eb;
-    --color-fondo: #fafafc;
+    --color-fondo: #c8c8ec;
     --radio-borde: 8px;
     --sombra-suave: 0 1px 3px rgba(0,0,0,0.08);
 }

@@ -1,7 +1,15 @@
 import { useEffect, useRef } from "react";
 
+const FILTROS_CSS={
+    Original: 'none',
+    Gris:'grayscale(100%)',
+    Sepia : 'sepia(100%)',
+    'blanco y negro ': 'grayscale(100%) contrast(120%)',
+    Desenfoque: 'blur(4px)',
+};
 
-export default function VistaPrevia({imagenOriginal}){
+
+export default function VistaPrevia({imagenOriginal,rotacion, volteoH,volteoV,filtroActivo}){
     const canvasRef = useRef(null);
 
     useEffect(()=>{
@@ -12,9 +20,20 @@ export default function VistaPrevia({imagenOriginal}){
         const img = new Image();
 
         img.onload=()=>{
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.drawImage(img,0,0);
+            const deCostado = rotacion ===90 || rotacion ===270;
+            canvas.width = deCostado ? img.height:img.width;
+            canvas.height = deCostado ? img.width:img.height;
+            ctx.save();
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            
+            //moviendo el 'origen' al centro del canva
+            //para que gire en el centro
+            ctx.translate(canvas.width/2,canvas.height/2);
+            ctx.rotate((rotacion * Math.PI)/180);
+            ctx.scale(volteoH ? -1 : 1, volteoV);
+            ctx.filtrar= FILTROS_CSS[filtroActivo] || 'none';
+            ctx.drawImage(img, -img.width/2, -img.height/2);
+            ctx.restore();
         };
         img.src = imagenOriginal;
     }), [imagenOriginal];
