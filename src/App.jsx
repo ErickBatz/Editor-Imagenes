@@ -8,10 +8,15 @@ import './App.css'
 function App() {
 
   const [imagenOriginal, setImagenOriginal] = useState(null);
+  const [imagenProcesada,setImagenProcesada] = useState(null);
   const [rotacion,setRotacion] = useState(0);
   const [volteoH,setVolteoH]= useState(false);
   const [volteoV,setVolteoV] = useState(false);
-  const [filtroActivo,setFiltroActivo] = useState('original');
+  const [filtroActivo,setFiltroActivo] = useState('Original');
+  const[brillo,setBrillo] = useState(100);
+  const [constraste, setContraste] = useState(100);
+  const [saturacion,setSaturacion] = useState(100);
+  const [galeria, setGaleria] = useState([]);
 
   function rotar(grados){
     setRotacion(prev=>(prev+grados+360)%360)
@@ -29,7 +34,20 @@ function App() {
     setRotacion(0);
     setVolteoH(false);
     setVolteoV(false);
-    setFiltroActivo('original');
+    setFiltroActivo('Original');
+    setBrillo(100);
+    setContraste(100);
+    setSaturacion(100);  
+  }
+  function agregarGaleria(){
+    if(!imagenProcesada) return;
+
+    setGaleria(prev => [...prev,imagenProcesada]);
+    console.log('Galeria Actualizada, total de imagenes: ',galeria.length+1);
+
+    setImagenOriginal(null);
+    setImagenProcesada(null);
+    restablecer();
   }
 
   return (
@@ -41,20 +59,31 @@ function App() {
           imagenOriginal={imagenOriginal}
           rotacion={rotacion}
           volteoH={volteoH}
-          volteoV={filtroActivo}
+          volteoV={volteoV}
+          filtroActivo={filtroActivo}
+          brillo={brillo}
+          constraste={constraste}
+          saturacion={saturacion}
+          onImagenProcesada={setImagenProcesada}
           />
 
         <HerramientasEdicion
           imagenCargada={!!imagenOriginal}
           filtroActivo={filtroActivo}
+          brillo={brillo}
+          constraste={constraste}
+          saturacion={saturacion}
+          onCambiarBrillo={setBrillo}
+          onCambiarSaturacion={setSaturacion}
           onRotarIzquierda={()=>rotar(-90)}
           onRotarDerecha={()=>rotar(90)}
           onRotar180={()=>rotar(180)}
           onRegresarRotacion={() => setRotacion(0)}
           onVoltearHorizontal={voltearHorizontal}
           onVoltearVertical={voltearVertical}
-          onSeleccionarFiltros={setFiltroActivo}
+          onSeleccionarFiltro={setFiltroActivo}
           onRestablecer={restablecer}
+          onAgregarGaleria={agregarGaleria}
         
         />
       </main>

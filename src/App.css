@@ -145,3 +145,37 @@
   font-size: 0.85rem;
   margin-top: 0.5rem;
 }
+.inicio-pagina{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+.inicio-tarjeta{
+  width: min(100%, 620px);
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+  border-radius: var(--radio-borde);
+  background: white;
+  box-shadow: var(--sombra-suave);
+}
+.inicio-etiqueta{
+  color: var(--color-primario);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.inicio-tarjeta h1{
+  margin: 0.75rem 0;
+  color: var(--color-texto-principal);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+.inicio-descripcion{
+  margin: 0 auto 1.5rem;
+  color: var(--color-texto-secundario);
+}
+.inicio-enlace{
+  display: inline-block;
+  text-decoration: none;
+}

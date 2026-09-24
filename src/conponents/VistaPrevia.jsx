@@ -4,7 +4,7 @@ const FILTROS_CSS={
     Original: 'none',
     Gris:'grayscale(100%)',
     Sepia : 'sepia(100%)',
-    'blanco y negro ': 'grayscale(100%) contrast(120%)',
+    'Blanco y Negro ': 'grayscale(100%) contrast(120%)',
     Desenfoque: 'blur(4px)',
 };
 
@@ -30,13 +30,13 @@ export default function VistaPrevia({imagenOriginal,rotacion, volteoH,volteoV,fi
             //para que gire en el centro
             ctx.translate(canvas.width/2,canvas.height/2);
             ctx.rotate((rotacion * Math.PI)/180);
-            ctx.scale(volteoH ? -1 : 1, volteoV);
-            ctx.filtrar= FILTROS_CSS[filtroActivo] || 'none';
+            ctx.scale(volteoH ? -1 : 1, volteoV ? -1 : 1);
+            ctx.filter= FILTROS_CSS[filtroActivo] || 'none';
             ctx.drawImage(img, -img.width/2, -img.height/2);
             ctx.restore();
         };
         img.src = imagenOriginal;
-    }), [imagenOriginal];
+    }, [imagenOriginal,rotacion,volteoH,volteoV,filtroActivo]);
     
     return(
         <section className="panel">

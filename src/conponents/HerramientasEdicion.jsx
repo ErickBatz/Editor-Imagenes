@@ -26,6 +26,9 @@ export default function HerramientasEdicion({
                             disabled = {!imagenCargada}
                             onClick={()=> onSeleccionarFiltro(filtro)}
                         >
+                        {
+                            filtro
+                        }
                             
                         </button>
                     ))
