@@ -6,8 +6,11 @@ export default function Header(){
         <header className="app-header">
             <div className="logo">Editor de fotos</div>
             <div className="header-actions">
-                <button className="btn-ghost">ver galeria</button>
-                <Link to='/login'>
+                <Link to='/galeria' >
+                    <button className="btn-ghost">ver galeria</button>
+                </Link>
+    
+                <Link to='/login' >
                     <span className="usuario">Usuario</span>
                 </Link>
                 

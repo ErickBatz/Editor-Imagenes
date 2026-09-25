@@ -6,11 +6,13 @@
     --color-botton: #3B82F6;
     --color-bordes:rgba(255, 255, 255, 0.12);
     --color-btn-secundario:#2D2D2D;
+    --sombra-suave: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    --color-hover:#376abb;
 }
 
 body{
     margin: 0;
-    font-family: system-ui, -apple-system,sans-serif;
+    font-family: system-ui, -ap0ple-system,sans-serif;
     background: var(--color-fondo);
     color: var(--color-texto-principal);
 }

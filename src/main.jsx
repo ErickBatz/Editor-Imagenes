@@ -6,6 +6,7 @@ import Inicio from './conponents/Inicio.jsx'
 import Login from './conponents/Login.jsx'
 import './styles/variables.css'
 import './App.css'
+import Galeria from './conponents/Galeria.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -14,8 +15,9 @@ createRoot(document.getElementById('root')).render(
         <Route path='/' element={<Inicio/>} />
         <Route path='/editor' element={<App/>}/>
         <Route path='/login' element={<Login/>} />
+        <Route path='/galeria' element={<Galeria/>}  />
       </Routes> 
     </BrowserRouter>
    
-  </StrictMode>,
+  </StrictMode>
 )

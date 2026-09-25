@@ -1,6 +1,9 @@
 const FILTROS = ['Original','Gris','Sepia','Blanco y Negro','Desenfoque'];
 
 export default function HerramientasEdicion({
+    brillo,
+    constraste,
+    saturacion,
     imagenCargada,
     filtroActivo,
     onRotarIzquierda,
@@ -10,7 +13,11 @@ export default function HerramientasEdicion({
     onVoltearHorizontal,
     onVoltearVertical,
     onSeleccionarFiltro,
+    onCambiarBrillo,
+    onCambiarSaturacion,
+    onCambiarContraste,
     onRestablecer,
+    onAgregarGaleria
 }){
    
     return(
@@ -39,12 +46,33 @@ export default function HerramientasEdicion({
             </div>
             <div className="grupo">
                 <p className="grupo-titulo">Ajustes</p>
-                <label>Brillo</label>
-                <input type="range" disabled/>
+                <label>Brillo:{brillo}%</label>
+                <input 
+                    type="range"
+                    min="0"
+                    max="200"
+                    value={brillo}  
+                    disabled={!imagenCargada}
+                    onChange={(e)=> onCambiarBrillo(Number(e.target.value))}
+                    />
                 <label>Contraste</label>
-                <input type="range" disabled/>
+                <input 
+                    type="range" 
+                    min="0"
+                    max="200"
+                    value={constraste}
+                    disabled ={!imagenCargada}
+                    onChange={(e)=> onCambiarContraste(Number(e.target.value))}
+                    />
                 <label>Saturacion</label>
-                <input type="range" disabled/>
+                <input 
+                    type="range" 
+                    min="0"
+                    max="200"
+                    value={saturacion}
+                    disabled={!imagenCargada}
+                    onChange={(e)=>onCambiarSaturacion(Number(e.target.value))}
+                    />
             </div>
 
             <div className="group">
@@ -64,7 +92,7 @@ export default function HerramientasEdicion({
 
             <div className="acciones-finales">
                 <button className="btn-secundari" disabled={!imagenCargada} onClick={onRestablecer}>Restablecer</button>
-                <button className="btn-accion">Agregar a galeria</button>
+                <button className="btn-accion" disabled={!imagenCargada} onClick={onAgregarGaleria} >Agregar a galeria</button>
             </div>
             
         </section>

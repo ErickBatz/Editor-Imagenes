@@ -75,6 +75,7 @@ function App() {
           saturacion={saturacion}
           onCambiarBrillo={setBrillo}
           onCambiarSaturacion={setSaturacion}
+          onCambiarContraste={setContraste}
           onRotarIzquierda={()=>rotar(-90)}
           onRotarDerecha={()=>rotar(90)}
           onRotar180={()=>rotar(180)}
