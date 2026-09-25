@@ -4,7 +4,7 @@ const FILTROS_CSS={
     Original: 'none',
     Gris:'grayscale(100%)',
     Sepia : 'sepia(100%)',
-    'Blanco y Negro ': 'grayscale(100%) contrast(120%)',
+    'Blanco y Negro': 'grayscale(100%) contrast(120%)',
     Desenfoque: 'blur(4px)',
 };
 

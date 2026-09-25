@@ -1,13 +1,11 @@
 :root{
-    --color-primario: #679e9a;
-    --color-acento: #7c3aed;
-    --color-accion: #ec4899;
-    --color-texto-principal:#118227;
-    --color-texto-secundario: #4b5563;
-    --color-bordes: #e5e7eb;
-    --color-fondo: #c8c8ec;
+    --color-texto-principal:#E0E0E0;
+    --color-fondo: #121212;
+    --color-card:#1E1E1E;
     --radio-borde: 8px;
-    --sombra-suave: 0 1px 3px rgba(0,0,0,0.08);
+    --color-botton: #3B82F6;
+    --color-bordes:rgba(255, 255, 255, 0.12);
+    --color-btn-secundario:#2D2D2D;
 }
 
 body{

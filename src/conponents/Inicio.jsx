@@ -1,11 +1,19 @@
-export default function (){
+import { Link } from "react-router-dom";
+
+export default function Inicio (){
     return(
-        <div className="contenedor">
+        <div className="inicio">
             <div className="titulo">
-                <h2>Bienvenidos Al Editor de codigo</h2>
+                <h2>Bienvenidos Al Editor de Imagenes</h2>
             </div>
             <div className="contenido">
-                div.con
+                <p>Hola usuario te damos la bienvenida al editor de imagenes 
+                    usando tecnologia React
+                </p>
+
+            <Link to='/editor' >
+                <button>Abrir Editor</button>
+            </Link>
             </div>
         </div>
     );

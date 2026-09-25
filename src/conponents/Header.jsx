@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Header(){
 
     return(
@@ -5,7 +7,10 @@ export default function Header(){
             <div className="logo">Editor de fotos</div>
             <div className="header-actions">
                 <button className="btn-ghost">ver galeria</button>
-                <span className="usuario">Usuario</span>
+                <Link to='/login'>
+                    <span className="usuario">Usuario</span>
+                </Link>
+                
             </div>
         </header>
     );
