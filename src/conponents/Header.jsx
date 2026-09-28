@@ -5,7 +5,12 @@ export default function Header(){
     return(
         <header className="app-header">
             <div className="logo">Editor de fotos</div>
+            
             <div className="header-actions">
+                <Link to="/" >
+                    <button className="btn-regresar" >Regresar</button>
+                </Link>
+
                 <Link to='/galeria' >
                     <button className="btn-ghost">ver galeria</button>
                 </Link>
@@ -13,6 +18,7 @@ export default function Header(){
                 <Link to='/login' >
                     <span className="usuario">Usuario</span>
                 </Link>
+               
                 
             </div>
         </header>

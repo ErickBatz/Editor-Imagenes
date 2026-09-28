@@ -1,0 +1,72 @@
+
+/*layoud contenedor de la galeria*/
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/*Tarjeta(card)*/
+.card{
+    background-color: var(--color-card);
+    border: 1px solid var(--color-bordes);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, border-color 0.25s, box-shadow 0.25s ease;
+}
+.card:hover{
+    transform: translateY(-4px);
+    border-color: var(--color-botton);
+    box-shadow: 0 12px 30px -5px rgba(0, 0,0,0.7);
+}
+/*Encabezado del card*/
+.card-titulo {
+    padding: 1.25rem 1.25rem 0.75rem 1.25rem;
+}
+
+.card-titulo h2{
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-texto-principal);
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+}
+
+/*Cuerpo del Card*/
+.card-body{
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/*Contenedor de la Imagenen*/
+.card-body .img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: var(--color-fondo);
+    border-radius: calc(var(--radio-borde));
+    border: 1px solid var(--color-bordes);
+    overflow: hidden;
+    position: relative;
+}
+
+/*Imagen*/
+.card-body .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.card:hover .img img{
+    transform: scale(1.05);
+}

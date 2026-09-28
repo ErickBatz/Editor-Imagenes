@@ -63,30 +63,77 @@
   border: 1px solid var(--color-bordes);
 
 }
+
+.login {
+  background-color: var(--color-card);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-bordes);
+  box-shadow: var(--sombra-suave);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+/*Titulo*/
 .login h2{
-  font-size: 2.5rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-texto-principals);
+  letter-spacing: 0.5px;
+}
+
+/*Formulario*/
+.login form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 .input-group{
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 .input-group label{
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 2.5;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-texto-principal);
 }
 .input-group input{
-  padding: 0.5rem;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
   border-radius: var(--radio-borde);
+  padding: 0.75rem 1rem;
+  color: var(--color-texto-principal);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input::placeholder{
+  color:rgba(224, 224, 224, 0.4);
+}
+.input-group input:focus{
+  border-color: var(--color-botton);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+} 
+.btn-submit{
+  margin-top: 0.5rem;
+  background-color: var(--color-botton);
+  color: #FFFFFF;
   border: none;
-  margin-bottom: 1rem;
+  border-radius: var(--radio-borde);
+  padding: 0.8rem 1rem;
   font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s easem, transform 0.1s ease;
 }
-.input-group input:hover{
-  box-shadow: var(--sombra-suave);
+.btn-submit:hover{
+  background-color: var(--color-hover);
 }
 
-.login button{
-  padding: 1rem;
+.btn-submit:active{
+  transform: scale(0.98);
 }
-
