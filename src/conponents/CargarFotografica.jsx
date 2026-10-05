@@ -10,7 +10,7 @@ function validarArchivo(Archivo){
     const tamanoMB = Archivo.size/(1024*1024);
 
     if(tamanoMB > TAMANIO_MAXIMO_MB){
-        return (`El archivo pesa: ${tamanoMB} y el peso maximo es ${TAMANIO_MAXIMO_MB}}`);
+        return (`El archivo pesa: ${tamanoMB} y el peso maximo es ${TAMANIO_MAXIMO_MB}`);
     }
     return null;
 }

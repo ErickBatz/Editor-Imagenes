@@ -75,7 +75,7 @@ export default function HerramientasEdicion({
                     />
             </div>
 
-            <div className="group">
+            <div className="grupo">
                 <p className="grupo-titulo">Transformar</p>
                 <div className="botones-transformar">
                     <button disabled={!imagenCargada} onClick={onRotarIzquierda} >90° Izquierda</button>
