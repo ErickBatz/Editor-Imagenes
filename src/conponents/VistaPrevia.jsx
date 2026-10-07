@@ -9,7 +9,7 @@ const FILTROS_CSS={
 };
 
 
-export default function VistaPrevia({imagenOriginal,rotacion, volteoH,volteoV,filtroActivo,brillo,constraste,saturacion,onImagenProcesada}){
+export default function VistaPrevia({imagenOriginal,rotacion, volteoH,volteoV,filtroActivo,brillo,contraste,saturacion,onImagenProcesada}){
     const canvasRef = useRef(null);
 
     useEffect(()=>{
@@ -33,12 +33,12 @@ export default function VistaPrevia({imagenOriginal,rotacion, volteoH,volteoV,fi
             ctx.scale(volteoH ? -1 : 1, volteoV ? -1 : 1);
             
             const filtroBase= FILTROS_CSS[filtroActivo] || '';
-            ctx.filter = `${filtroBase} brightness(${brillo}%) contrast(${constraste}%) saturate(${saturacion}%)`.trim();
+            ctx.filter = `${filtroBase} brightness(${brillo}%) contrast(${contraste}%) saturate(${saturacion}%)`.trim();
             ctx.drawImage(img, -img.width/2, -img.height/2);
             ctx.restore();
         };
         img.src = imagenOriginal;
-    }, [imagenOriginal,rotacion,volteoH,volteoV,filtroActivo,brillo,constraste,saturacion,onImagenProcesada]);
+    }, [imagenOriginal,rotacion,volteoH,volteoV,filtroActivo,brillo,contraste,saturacion,onImagenProcesada]);
     
     return(
         <section className="panel">

@@ -2,7 +2,7 @@ const FILTROS = ['Original','Gris','Sepia','Blanco y Negro','Desenfoque'];
 
 export default function HerramientasEdicion({
     brillo,
-    constraste,
+    contraste,
     saturacion,
     imagenCargada,
     filtroActivo,
@@ -60,7 +60,7 @@ export default function HerramientasEdicion({
                     type="range" 
                     min="0"
                     max="200"
-                    value={constraste}
+                    value={contraste}
                     disabled ={!imagenCargada}
                     onChange={(e)=> onCambiarContraste(Number(e.target.value))}
                     />

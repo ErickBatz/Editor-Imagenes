@@ -14,7 +14,7 @@ function App() {
   const [volteoV,setVolteoV] = useState(false);
   const [filtroActivo,setFiltroActivo] = useState('Original');
   const[brillo,setBrillo] = useState(100);
-  const [constraste, setContraste] = useState(100);
+  const [contraste, setContraste] = useState(100);
   const [saturacion,setSaturacion] = useState(100);
   const [galeria, setGaleria] = useState([]);
 
@@ -62,7 +62,7 @@ function App() {
           volteoV={volteoV}
           filtroActivo={filtroActivo}
           brillo={brillo}
-          constraste={constraste}
+          contraste={contraste}
           saturacion={saturacion}
           onImagenProcesada={setImagenProcesada}
           />
@@ -71,7 +71,7 @@ function App() {
           imagenCargada={!!imagenOriginal}
           filtroActivo={filtroActivo}
           brillo={brillo}
-          constraste={constraste}
+          contraste={contraste}
           saturacion={saturacion}
           onCambiarBrillo={setBrillo}
           onCambiarSaturacion={setSaturacion}
