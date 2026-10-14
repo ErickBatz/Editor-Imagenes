@@ -9,7 +9,7 @@ const FILTROS_CSS={
 };
 
 
-export default function VistaPrevia({imagenOriginal,rotacion, volteoH,volteoV,filtroActivo,brillo,contraste,saturacion,onImagenProcesada}){
+export default function VistaPrevia({imagenOriginal,rotacion, volteoH,volteoV,filtroActivo,brillo,contraste,saturacion}){
     const canvasRef = useRef(null);
 
     useEffect(()=>{
@@ -38,7 +38,7 @@ export default function VistaPrevia({imagenOriginal,rotacion, volteoH,volteoV,fi
             ctx.restore();
         };
         img.src = imagenOriginal;
-    }, [imagenOriginal,rotacion,volteoH,volteoV,filtroActivo,brillo,contraste,saturacion,onImagenProcesada]);
+    }, [imagenOriginal,rotacion,volteoH,volteoV,filtroActivo,brillo,contraste,saturacion]);
     
     return(
         <section className="panel">
