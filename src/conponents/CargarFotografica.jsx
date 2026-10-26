@@ -18,7 +18,7 @@ function validarArchivo(Archivo){
 export default function CargarFotografia({onImagenCargada}){
 
     const [error, setError] = useState('');
-    const [arrastrado, setArrastrado] = useState(false);
+  
 
     function procesarArchivo(Archivo){
         const mensajeError = validarArchivo(Archivo);
@@ -40,20 +40,7 @@ export default function CargarFotografia({onImagenCargada}){
         if(Archivo) procesarArchivo(Archivo);
     }
 
-    function manejarDrop(evento){
-        evento.preventDefault();
-        setArrastrado(false);
-        const Archivo = evento.dataTransfer.files[0];
-        if(Archivo) procesarArchivo(Archivo);
-    }
-
-    function manejarDragOver(evento){
-        evento.preventDefault();
-        setArrastrado(true);
-    }
-    function manejarDragLeave(){
-        setArrastrado(false);
-    }
+  
 
     
 
@@ -61,10 +48,8 @@ export default function CargarFotografia({onImagenCargada}){
         <section className="panel">
             <h3>Cargar Fotografia</h3>
             <div 
-                className={`dropzone ${arrastrado ? 'dropzone-activo' : ''  }`}
-                onDrop={manejarDrop}
-                onDragOver={manejarDragOver}
-                onDragLeave={manejarDragLeave}
+              className="dropzone"
+               
                 >
                 <p>subir</p>
                 <p>Arrastrar una imagen</p>

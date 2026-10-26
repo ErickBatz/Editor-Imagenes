@@ -8,7 +8,6 @@ import './App.css'
 function App() {
 
   const [imagenOriginal, setImagenOriginal] = useState(null);
-  const [imagenProcesada,setImagenProcesada] = useState(null);
   const [rotacion,setRotacion] = useState(0);
   const [volteoH,setVolteoH]= useState(false);
   const [volteoV,setVolteoV] = useState(false);
@@ -16,7 +15,6 @@ function App() {
   const[brillo,setBrillo] = useState(100);
   const [contraste, setContraste] = useState(100);
   const [saturacion,setSaturacion] = useState(100);
-  const [galeria, setGaleria] = useState([]);
 
   function rotar(grados){
     setRotacion(prev=>(prev+grados+360)%360)
@@ -39,16 +37,6 @@ function App() {
     setContraste(100);
     setSaturacion(100);  
   }
-  function agregarGaleria(){
-    if(!imagenProcesada) return;
-
-    setGaleria(prev => [...prev,imagenProcesada]);
-    console.log('Galeria Actualizada, total de imagenes: ',galeria.length+1);
-
-    setImagenOriginal(null);
-    setImagenProcesada(null);
-    restablecer();
-  }
 
   return (
    <div className="app">
@@ -64,7 +52,7 @@ function App() {
           brillo={brillo}
           contraste={contraste}
           saturacion={saturacion}
-          onImagenProcesada={setImagenProcesada}
+          
           />
 
         <HerramientasEdicion
@@ -84,7 +72,7 @@ function App() {
           onVoltearVertical={voltearVertical}
           onSeleccionarFiltro={setFiltroActivo}
           onRestablecer={restablecer}
-          onAgregarGaleria={agregarGaleria}
+         
         
         />
       </main>
