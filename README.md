@@ -1,16 +1,50 @@
-# React + Vite
+# 🎨 Editor de Imágenes & Tablero Kanban (React App)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web interactiva desarrollada con **React y Vite**, que combina dos herramientas funcionales: un editor de imágenes en tiempo real utilizando **filtros de CSS** y un sistema de gestión de tareas organizado en un **Tablero Kanban** mediante el uso avanzado de hooks (`useState`, `useEffect`).
 
-Currently, two official plugins are available:
+![Demo del Proyecto](./ruta-a-tu-imagen-o-gif.gif) *(Opcional: Agrega una captura de pantalla o un GIF aquí)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Demo en Vivo
+- **Frontend App:** [https://tu-proyecto.vercel.app](https://tu-proyecto.vercel.app) *(Actualiza con tu enlace de Vercel o Netlify)*
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologías y Herramientas Utilizadas
 
-## Expanding the ESLint configuration
+- **React.js (con Vite)** - Framework y empaquetador de alto rendimiento.
+- **JavaScript (ES6+)** - Lógica de programación y manipulación de estados.
+- **Filtros CSS** - Aplicación dinámica de efectos visuales sobre imágenes.
+- **Hooks de React** - Uso de `useState` para gestión de estados locales e interfaz, y `useEffect` para efectos secundarios y persistencia.
+- **HTML5 & CSS3** - Estructura y diseño responsivo.
+- **Git & GitHub** - Control de versiones y despliegue.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Características Principales
+
+### 1. 🖼️ Editor de Imágenes con Filtros CSS
+- **Carga de imágenes:** Sube cualquier imagen desde tu dispositivo local.
+- **Filtros en tiempo real:** Modifica propiedades visuales aplicando filtros de CSS dinámicos (Brillo, Contraste, Saturación, Escala de grises, Sepia, etc.).
+- **Control de estados:** Manejo fluido de los valores de los filtros mediante `useState`.
+
+### 2. 📋 Tablero Kanban Interactivo
+- **Gestión de tareas:** Organiza pendientes, tareas en proceso y finalizadas.
+- **Ciclo de vida y efectos:** Uso de `useEffect` para sincronizar y actualizar el almacenamiento o la interfaz de manera fluida.
+
+---
+
+## ⚙️ Instalación y Configuración Local
+
+Si deseas clonar y ejecutar este proyecto en tu entorno local, sigue estos pasos:
+
+### Prerrequisitos
+Asegúrate de tener instalado en tu computadora:
+- [Node.js](https://nodejs.org/) (versión 18 o superior recomendada)
+- Git
+
+### Pasos
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/tu-repositorio.gif](https://github.com/tu-usuario/tu-repositorio.gif)
+   cd tu-repositorio
